@@ -1,0 +1,49 @@
+{
+  "rule_set_name": "default_rules",
+  "version": 1,
+  "description": "Baseline Review-by-Exception rule set for a downstream purification batch record.",
+  "rules": [
+    {
+      "id": "R1",
+      "type": "tolerance_check",
+      "description": "Actual value must be within the step's own tolerance of target.",
+      "enabled": true,
+      "params": {}
+    },
+    {
+      "id": "R2",
+      "type": "equipment_status_check",
+      "description": "Equipment must not be DOWN or DISCONFIGURED during the step.",
+      "enabled": true,
+      "params": { "blocked_statuses": ["DOWN", "DISCONFIGURED"] }
+    },
+    {
+      "id": "R3",
+      "type": "comment_present",
+      "description": "Any operator comment on a step is routed to a reviewer.",
+      "enabled": true,
+      "params": {}
+    },
+    {
+      "id": "R4",
+      "type": "value_range",
+      "description": "UV280 absorbance on the chromatography step must stay within 0-2.5 AU.",
+      "enabled": true,
+      "params": { "tag": "UV280", "min": 0.0, "max": 2.5 }
+    },
+    {
+      "id": "R5",
+      "type": "duration_check",
+      "description": "No single step should run longer than 180 minutes without review.",
+      "enabled": true,
+      "params": { "max_minutes": 180 }
+    },
+    {
+      "id": "R6",
+      "type": "segregation_of_duties",
+      "description": "The same user cannot both perform and review a step.",
+      "enabled": true,
+      "params": {}
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "batch_id": "BATCH-EXC-002",
+  "steps": [
+    {
+      "step_id": "S1", "operation": "DISPENSE", "target_value": 120.0, "actual_value": 128.5,
+      "tolerance_pct": 2.0, "equipment_id": "SCALE-07", "equipment_status": "AVAILABLE",
+      "comment": null, "performed_by": "operator.jsmith", "reviewed_by": "qa.reviewer",
+      "start_time": "2026-08-21T08:00:00Z", "end_time": "2026-08-21T08:15:00Z",
+      "tags": {}
+    },
+    {
+      "step_id": "S2", "operation": "UF_CONCENTRATE", "target_value": 50.0, "actual_value": 49.8,
+      "tolerance_pct": 5.0, "equipment_id": "UF-SKID-01", "equipment_status": "DISCONFIGURED",
+      "comment": "Scale flagged red mid-run, IMS ticket #7731 opened", "performed_by": "operator.jsmith",
+      "reviewed_by": "qa.reviewer",
+      "start_time": "2026-08-21T08:30:00Z", "end_time": "2026-08-21T09:45:00Z",
+      "tags": { "TMP": 18.2, "PERMEATE_FLUX": 55.4 }
+    },
+    {
+      "step_id": "S3", "operation": "CHROM_LOAD", "target_value": 8.0, "actual_value": 8.05,
+      "tolerance_pct": 3.0, "equipment_id": "CHROM-SKID-02", "equipment_status": "AVAILABLE",
+      "comment": null, "performed_by": "operator.jsmith", "reviewed_by": "qa.reviewer",
+      "start_time": "2026-08-21T10:00:00Z", "end_time": "2026-08-21T13:15:00Z",
+      "tags": { "UV280": 3.1 }
+    },
+    {
+      "step_id": "S4", "operation": "CIP", "target_value": 100.0, "actual_value": 100.0,
+      "tolerance_pct": 1.0, "equipment_id": "UF-SKID-01", "equipment_status": "AVAILABLE",
+      "comment": null, "performed_by": "operator.jsmith", "reviewed_by": "operator.jsmith",
+      "start_time": "2026-08-21T14:00:00Z", "end_time": "2026-08-21T14:25:00Z",
+      "tags": {}
+    }
+  ]
+}

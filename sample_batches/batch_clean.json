@@ -1,0 +1,26 @@
+{
+  "batch_id": "BATCH-CLEAN-001",
+  "steps": [
+    {
+      "step_id": "S1", "operation": "DISPENSE", "target_value": 120.0, "actual_value": 120.8,
+      "tolerance_pct": 2.0, "equipment_id": "SCALE-07", "equipment_status": "AVAILABLE",
+      "comment": null, "performed_by": "operator.jsmith", "reviewed_by": "qa.reviewer",
+      "start_time": "2026-08-20T08:00:00Z", "end_time": "2026-08-20T08:15:00Z",
+      "tags": {}
+    },
+    {
+      "step_id": "S2", "operation": "UF_CONCENTRATE", "target_value": 50.0, "actual_value": 49.6,
+      "tolerance_pct": 5.0, "equipment_id": "UF-SKID-01", "equipment_status": "AVAILABLE",
+      "comment": null, "performed_by": "operator.jsmith", "reviewed_by": "qa.reviewer",
+      "start_time": "2026-08-20T08:30:00Z", "end_time": "2026-08-20T09:45:00Z",
+      "tags": { "TMP": 18.2, "PERMEATE_FLUX": 55.4 }
+    },
+    {
+      "step_id": "S3", "operation": "CHROM_LOAD", "target_value": 8.0, "actual_value": 8.05,
+      "tolerance_pct": 3.0, "equipment_id": "CHROM-SKID-02", "equipment_status": "AVAILABLE",
+      "comment": null, "performed_by": "operator.jsmith", "reviewed_by": "qa.reviewer",
+      "start_time": "2026-08-20T10:00:00Z", "end_time": "2026-08-20T11:20:00Z",
+      "tags": { "UV280": 1.42 }
+    }
+  ]
+}

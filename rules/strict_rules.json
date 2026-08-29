@@ -1,0 +1,49 @@
+{
+  "rule_set_name": "strict_rules",
+  "version": 1,
+  "description": "Tighter rule set: narrower tolerance override and a shorter max step duration. Demonstrates that a rule set is just config — no code change needed to retune review strictness.",
+  "rules": [
+    {
+      "id": "R1",
+      "type": "tolerance_check",
+      "description": "Actual value must be within a tighter 2% tolerance regardless of the step's own setting.",
+      "enabled": true,
+      "params": { "tolerance_pct": 2.0 }
+    },
+    {
+      "id": "R2",
+      "type": "equipment_status_check",
+      "description": "Equipment must not be DOWN, DISCONFIGURED, or IN_MAINTENANCE.",
+      "enabled": true,
+      "params": { "blocked_statuses": ["DOWN", "DISCONFIGURED", "IN_MAINTENANCE"] }
+    },
+    {
+      "id": "R3",
+      "type": "comment_present",
+      "description": "Any operator comment on a step is routed to a reviewer.",
+      "enabled": true,
+      "params": {}
+    },
+    {
+      "id": "R4",
+      "type": "value_range",
+      "description": "UV280 absorbance must stay within a tighter 0-2.0 AU band.",
+      "enabled": true,
+      "params": { "tag": "UV280", "min": 0.0, "max": 2.0 }
+    },
+    {
+      "id": "R5",
+      "type": "duration_check",
+      "description": "No step should run longer than 120 minutes without review.",
+      "enabled": true,
+      "params": { "max_minutes": 120 }
+    },
+    {
+      "id": "R6",
+      "type": "segregation_of_duties",
+      "description": "The same user cannot both perform and review a step.",
+      "enabled": true,
+      "params": {}
+    }
+  ]
+}
